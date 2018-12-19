@@ -22,14 +22,14 @@ The following table lists the software requirements for running the lab exercise
  | Software | Version | Check |
  | -------- | ------- | ----- |
  | OCP CLI | v3.11 | $ oc version &#124; grep -i --color oc  <br><span style="color:red">oc </span> v3.11.0+0cbc58b |
- | Ansible | => v2.6 | $ ansible --version &#124; grep -i --color ansible <br> <span style="color:red">ansible</span> 2.7.2 <br> .... <br>|
- | NodeJS | v8.x | $ node -v <br> v8.11.3|
+ | Ansible | => v2.5 | $ ansible --version &#124; grep -i --color ansible <br> <span style="color:red">ansible</span> 2.7.2 <br> .... <br>|
+ | NodeJS | v8.x LTS | $ node -v <br> v8.11.3|
  | Git Installed | | $ git --version <br> git version 2.17.1|
  | Google Chrome Web Browser | (>59) | click [here](chrome://version/) if Google Chrome is your default browser else copy the link `chrome://version/` in your Chome |
- | Docker latest | Community Edition - Edge | $ docker --version <br> Docker version 18.05.0-ce, build f150324|
- | JDK | v8 | $ java -version <br>java version "1.8.0_131"<br>Java(TM) SE Runtime Environment (build 1.8.0_131-b11)<br>Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)|
+ | Docker latest | Community Edition | $ docker --version <br> Docker version 18.05.0-ce, build f150324|
+ | JDK | v1.8 | $ java -version <br>java version "1.8.0_131"<br>Java(TM) SE Runtime Environment (build 1.8.0_131-b11)<br>Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)|
  | Access to an OpenShift cluster | | `oc login -u <username> -p <password> <CLUSTER_URL>` |
- | Text editor such as Atom, IntelliJ or Visual Studio Code <br><br> (The exercises were created using `VSCode`, so the screenshots will match its layout and colour schemes) | - | - |
+ | Text editor such as Atom, IntelliJ or Visual Studio Code <br><br> (The exercises were created using `VSCode`, so the screenshots will match its layout and color schemes) | - | - |
 
 The lab exercises have been tested on the following operating systems
  * Fedora 29 64-bit
@@ -39,6 +39,8 @@ The lab exercises have been tested on the following operating systems
  **NOTE**
  > You will need administrator or super user level access on your system to install the prerequisite software for all the three operating systems.
  Locked down systems with restricted accounts are not supported.
+
+ > You can use any text editor to edit lab files. Using an editor that provides syntax highlighting and automatic indentation is helpful. We recommend ***Atom*** or ***Visual Studio Code***  for this course.
 
 ### Linux
 
@@ -97,7 +99,7 @@ brew install node@8
 brew install git
 ```
 
-7. Install Ansible using brew
+7. You need Ansible version 2.5 or greater to run the exercise playbooks. If you have not installed Ansible, or have an older version, install or upgrade it using brew
 ```bash
 brew install ansible
 ```
@@ -105,7 +107,7 @@ brew install ansible
 
 9. Download and uncompress the OpenShift 3.11 client binary archive. Copy the ***oc*** binary to ***/usr/local/bin*** folder on your system
 ```bash
-wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-mac.zip
+curl -L -O https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-mac.zip
 unzip openshift-origin-client-tools-v3.11.0-0cbc58b-mac.zip
 cp openshift-origin-client-tools-v3.11.0-0cbc58b-mac/oc /usr/local/bin/
 chmod +x /usr/local/bin/oc
