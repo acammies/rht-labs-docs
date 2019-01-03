@@ -1,9 +1,4 @@
 # DevOps Culture & Practice
-<!-- > Red Hat Open Innovation Labs Enablement Material. Preparing Engineers, consultants and TSMs with all the cultural and engineering practices for life in a Residency.
-
-![jenkins-crio-ocp-star-wars-kubes](./images/jenkins-crio-ocp-star-wars-kubes.png)
-
-This is a collection of practices and exercises to take a learner through a four day simulated residency experience. Learners can expect to be exposed to labs practices such as [Event Storming](https://rht-labs.github.io/practice-library/practices/event-storming/), [Social Contract](https://rht-labs.github.io/practice-library/practices/social-contract/) and [Impact Mapping](https://rht-labs.github.io/practice-library/practices/impact-mapping/) among many more which can be found in our [Practice Library](https://rht-labs.github.io/practice-library/). Learners will also be exposed to `Labs CI/CD` - how we use OpenShift & Ansible in conjunction with Jenkins to automate build and deploy of a sample todolist application and its required infrastructure. -->
 
 ## Learner Outcomes
 * Provide an immersive experience for students through practical application of DevOps culture using modern software development practices.
@@ -115,6 +110,8 @@ chmod +x /usr/local/bin/oc
 
 ### Microsoft Windows
 
+You will be adding several directories to the ***PATH*** environment variable. Follow the instructions at https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/ to edit the ***PATH*** environment variable on Windows 10.
+
 1. Download the 64-bit Node.js 8.x LTS Windows binary archive file from https://nodejs.org/dist/latest-v8.x/node-v8.14.0-win-x64.zip.
 
 Extract the zip file archive under a suitable folder in the ***C:\*** drive. Make sure that your directory name does not have any spaces in it.
@@ -141,24 +138,25 @@ Execute the following commands to run Ansible playbooks on Windows systems:
 
 * Pull the container image containing the tools and utilities that are required for running Ansible playbooks:
 ```bash
-docker pull quay.io/redhat-training/do500-toolbox
+docker pull quay.io/jrigsbee/do500-toolbox
 ```
 
-* Launch the container:
+* Launch the container and run a quick test:
 ```bash
-docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z -p 8080:8080 -p 9000:9000 do500-toolbox /bin/bash
+docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z quay.io/jrigsbee/do500-toolbox /bin/bash
 ```
 
 The ***C:/do500-workspace*** directory on your Windows system contains the lab files and Ansible playbooks for the lab exercises.
 
-* Once you are inside the container, you can log in to the OpenShift cluster using the OpenShift ***oc*** command-line client, and launch the playbooks:
+* Once you are inside the container, you can log in to the OpenShift cluster using the OpenShift ***oc*** command-line client, and verify that Ansible is installed:
 ```bash
 bash-4.4$ oc login -u <username> -p <password> <CLUSTER_URL>
-bash-4.4$ cd workarea/enablement-ci-cd
-bash-4.4$ ansible-playbook playbook.yml ...
+bash-4.4$ oc version
+bash-4.4$ ansible --version
+bash-4.4$ exit
 ```
 
-<!-- 7. Download and uncompress the OpenShift 3.11 client binary archive from https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-windows.zip, and extract it under the ***C:\*** drive. Add the directory where you uncompressed the zip file to the ***PATH*** environment variable, so that the ***oc.exe*** executable files is available in the system path. -->
+Your instructor will provide the ***username*** and ***password*** information for the OpenShift cluster when you are ready to run the lab exercises.
 
 ## Git and Containers 101
  - Git tutorial covering the basics - https://try.github.io/
