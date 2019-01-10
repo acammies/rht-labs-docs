@@ -39,39 +39,40 @@ The lab exercises have been tested on the following operating systems
 
 ### Linux
 
-1. Download and Install Node.js version 8.x LTS
+1. Download the Node.js 8.x LTS Linux 64-bit binary archive file from https://nodejs.org/dist/latest-v8.x/. The binary will be named as ***node-v8.x.y-linux-x64.tar.gz***, where 'x' and 'y' indicates the major and minor version of the latest Node.js 8 LTS release.
 ```bash
-wget https://nodejs.org/dist/latest-v8.x/node-v8.14.0-linux-x64.tar.gz
-tar -xvzf node-v8.14.0-linux-x64.tar.gz -C /usr/local/
+tar -xvzf node-v8.x.y-linux-x64.tar.gz -C /usr/local/
 ```
-Edit your ***.bashrc*** file and add the ***node*** binary to your ***PATH*** environment variable
+Replace 'x' and 'y' with the version you downloaded in the above step.
+
+2. Edit your ***.bashrc*** file and add the ***node*** binary to your ***PATH*** environment variable
 ```bash
-echo 'export PATH=/usr/local/node-v8.14.0/bin:$PATH' >> $HOME/.bashrc
+echo 'export PATH=/usr/local/node-v8.x.y/bin:$PATH' >> $HOME/.bashrc
 ```
 
-2. Install OpenJDK version 1.8
+3. Install OpenJDK version 1.8
 ```bash
 dnf install java-1.8.0-openjdk-devel
 ```
 
-3. Install Google Chrome version 70 or higher by downloading and running the the 64-bit RPM installer from https://google.com/chrome
+4. Install Google Chrome version 70 or higher by downloading and running the the 64-bit RPM installer from https://google.com/chrome
 ```bash
 dnf install google-chrome-stable_current_x86_64.rpm
 ```
-4. Install Docker, Git and Ansible
+5. Install Docker, Git and Ansible
 ```bash
 dnf install git ansible docker
 systemctl enable docker
 systemctl start docker
 ```
-5. Download and uncompress the OpenShift 3.11 client binary archive. Copy the ***oc*** binary to ***/usr/local/bin*** folder on your system
+6. Download and uncompress the OpenShift 3.11 client binary archive. Copy the ***oc*** binary to ***/usr/local/bin*** folder on your system
 ```bash
 wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
 tar -xvzf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
 cp openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit/oc /usr/local/bin/
 chmod +x /usr/local/bin/oc
 ```
-6. Download and install Atom text editor RPM installer from https://atom.io/download/rpm, or the Visual Studio Code RPM installer from https://code.visualstudio.com/docs/?dv=linux64_rpm
+7. Download and install Atom text editor RPM installer from https://atom.io/download/rpm, or the Visual Studio Code RPM installer from https://code.visualstudio.com/docs/?dv=linux64_rpm
 ```bash
 dnf install <rpm_name>
 ```
@@ -112,23 +113,29 @@ chmod +x /usr/local/bin/oc
 
 You will be adding several directories to the ***PATH*** environment variable. Follow the instructions at https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/ to edit the ***PATH*** environment variable on Windows 10.
 
-1. Download the 64-bit Node.js 8.x LTS Windows binary archive file from https://nodejs.org/dist/latest-v8.x/node-v8.14.0-win-x64.zip.
+1. Download the Node.js 8.x LTS Windows 64-bit binary archive file from https://nodejs.org/dist/latest-v8.x/. The binary will be named as ***node-v8.x.y-win-x64.zip***, where 'x' and 'y' indicates the major and minor version of the latest Node.js 8 LTS release.
 
-Extract the zip file archive under a suitable folder in the ***C:\*** drive. Make sure that your directory name does not have any spaces in it.
+Extract the zip file archive under a suitable folder in the ***C:\*** drive, for example ***C:\nodejs***. Make sure that your directory name does not have any spaces in it.
 
 Add the directory where you uncompressed the zip file to the ***PATH*** environment variable, so that the ***node.exe*** and ***npm.cmd*** executable files are available in the system path.
 
 2. Install JDK version 1.8 for Windows 64-bit by using the installer from the Oracle website at https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
-Ensure that you install the JDK into a directory which has no spaces in its name. Add the ***JAVA_HOME\bin*** directory to the ***PATH*** environment variable, so that the ***java.exe*** and ***javac.exe*** executable files are available in the system path.
+Ensure that you install the JDK into a directory which has no spaces in its name, for example ***C:\Java***. Add a new environment variable called ***JAVA_HOME*** which points to the top level directory where you installed the JDK.
+
+Add the ***JAVA_HOME\bin*** directory to the ***PATH*** environment variable, so that the ***java.exe*** and ***javac.exe*** executable files are available in the system path.
 
 3. Install Google Chrome version 70 or higher by downloading it from https://google.com/chrome
 
-4. Install Docker for Windows by following the instructions from https://hub.docker.com/editions/community/docker-ce-desktop-windows
+4. Install Docker for Windows by following the instructions from https://hub.docker.com/editions/community/docker-ce-desktop-windows. Before downloading, you will be asked to create an account. Register and download Docker for Windows.
+
+Ensure that you install Docker into a directory which has no spaces in its name, for example ***C:\Docker***. You will be prompted to enable Hyper-V during installation.
+
+Windows will restart a couple of times after enabling Hyper-V and continue with the Docker installation. Follow the instructions provided in the link above to test and verify your Docker installation.
 
 5. Download and install Git for Windows by using the 64-bit installer from https://github.com/git-for-windows/git/releases/download/v2.20.0.windows.1/Git-2.20.0-64-bit.exe.
 
-Follow the instructions at https://www.atlassian.com/git/tutorials/install-git#windows to install and verify your Git installation.
+Follow the instructions at https://www.atlassian.com/git/tutorials/install-git#windows to install and verify your Git installation. Ensure that you install Git into a directory which has no spaces in its name, for example ***C:\Git***.
 
 6. Download and install Atom text editor from https://github.com/atom/atom/releases/download/v1.33.0/AtomSetup-x64.exe, or Visual Studio Code from https://code.visualstudio.com/docs/?dv=win64
 
@@ -140,13 +147,15 @@ Execute the following commands to run Ansible playbooks on Windows systems:
 ```bash
 docker pull quay.io/jrigsbee/do500-toolbox
 ```
+* Create a working directory under your ***C:\*** drive to store the lab exercise files and Ansible playbooks
+```bash
+mkdir C:\do500-workspace
+```
 
 * Launch the container and run a quick test:
 ```bash
 docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z quay.io/jrigsbee/do500-toolbox /bin/bash
 ```
-
-The ***C:/do500-workspace*** directory on your Windows system contains the lab files and Ansible playbooks for the lab exercises.
 
 * Once you are inside the container, you can log in to the OpenShift cluster using the OpenShift ***oc*** command-line client, and verify that Ansible is installed:
 ```bash
