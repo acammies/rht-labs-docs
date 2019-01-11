@@ -12,26 +12,34 @@ An OpenShift Cluster is required to complete the lab exercises. Students will re
  - <**APPS_URL**> -- Wildcard subdomain for the exposed applications deployed in the Cluster
 
 ## Learner Pre-requisites
-The following table lists the software requirements for running the lab exercises:
-
- | Software | Version | Check |
- | -------- | ------- | ----- |
- | OCP CLI | v3.11 | $ oc version &#124; grep -i --color oc  <br><span style="color:red">oc </span> v3.11.0+0cbc58b |
- | Ansible | => v2.5 | $ ansible --version &#124; grep -i --color ansible <br> <span style="color:red">ansible</span> 2.7.2 <br> .... <br>|
- | NodeJS | v8.x LTS | $ node -v <br> v8.11.3|
- | Git Installed | | $ git --version <br> git version 2.17.1|
- | Google Chrome Web Browser | (>59) | click [here](chrome://version/) if Google Chrome is your default browser else copy the link `chrome://version/` in your Chome |
- | Docker latest | Community Edition | $ docker --version <br> Docker version 18.05.0-ce, build f150324|
- | JDK | v1.8 | $ java -version <br>java version "1.8.0_131"<br>Java(TM) SE Runtime Environment (build 1.8.0_131-b11)<br>Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)|
- | Access to an OpenShift cluster | | `oc login -u <username> -p <password> <CLUSTER_URL>` |
- | Text editor such as Atom, IntelliJ or Visual Studio Code <br><br> (The exercises were created using `VSCode`, so the screenshots will match its layout and color schemes) | - | - |
+The following are the minimal hardware requirements for running the lab exercises in this course
+* 64-bit Intel Core i5/i7 CPU or equivalent with virtualization extensions enabled
+* 4GB memory
+* 80GB hard disk
 
 The lab exercises have been tested on the following operating systems
  * Fedora 29 64-bit
  * Microsoft Windows 10 Pro 64-bit
  * macOS 10.14 "Mojave"
 
- **NOTE**
+The following table lists the software requirements for running the lab exercises:
+
+ | Software | Version | Check |
+ | -------- | ------- | ----- |
+ | OCP CLI | v3.11 | $ oc version &#124; grep -i --color oc |
+ | Ansible | => v2.5 | $ ansible --version &#124; grep -i --color ansible |
+ | NodeJS | v8.x LTS | $ node -v |
+ | Git Installed | | $ git --version |
+ | Google Chrome Web Browser | (>60) | click [here](chrome://version/) if Google Chrome is your default browser else copy the link `chrome://version/` in your Chome |
+ | Docker latest | Community Edition | $ docker --version |
+ | JDK | v1.8 | $ java -version |
+ | Access to an OpenShift cluster | | `oc login -u <username> -p <password> <CLUSTER_URL>` |
+ | Text editor such as Atom or Visual Studio Code <br><br> (The exercises were created using `VSCode`, so the screenshots will match its layout and color schemes) | - | - |
+
+
+
+ <b><span style="color:red">NOTE</span></b>
+
  > You will need administrator or super user level access on your system to install the prerequisite software for all the three operating systems.
  Locked down systems with restricted accounts are not supported.
 
@@ -137,11 +145,15 @@ Windows will restart a couple of times after enabling Hyper-V and continue with 
 
 Follow the instructions at https://www.atlassian.com/git/tutorials/install-git#windows to install and verify your Git installation. Ensure that you install Git into a directory which has no spaces in its name, for example ***C:\Git***.
 
+<b><span style="color:red">NOTE</span></b>
+
+> Ensure that the ***Git Bash*** component is selected during installation. You will need this to run bash shell scripts during the execution of lab exercises.
+
 6. Download and install Atom text editor from https://github.com/atom/atom/releases/download/v1.33.0/AtomSetup-x64.exe, or Visual Studio Code from https://code.visualstudio.com/docs/?dv=win64
 
 7. You will use a custom container image for running OpenShift client commands, and Ansible playbooks. You will map a directory on your local Windows system containing Ansible playbooks to a directory inside the container, and run the Ansible playbooks from within the container.
 
-Execute the following commands to run Ansible playbooks on Windows systems:
+Execute the following commands in the ***Windows Command Prompt*** to run Ansible playbooks on Windows systems:
 
 * Pull the container image containing the tools and utilities that are required for running Ansible playbooks:
 ```bash
@@ -156,6 +168,9 @@ mkdir C:\do500-workspace
 ```bash
 docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z quay.io/jrigsbee/do500-toolbox /bin/bash
 ```
+
+<b><span style="color:red">NOTE</span></b>
+> When you launch the container for the very first time, you will be prompted by Docker, as well as the Windows security subsystem to allow read and write access to the ***C:\do500-workspace*** directory. Allow read and write access to this directory by entering your Windows username and password when prompted.
 
 * Once you are inside the container, you can log in to the OpenShift cluster using the OpenShift ***oc*** command-line client, and verify that Ansible is installed:
 ```bash
