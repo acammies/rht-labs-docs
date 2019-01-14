@@ -609,14 +609,14 @@ _____
 
 _____ -->
 
-## Additional Reading
+<!-- ## Additional Reading
 > List of links and other reading material that might be of use for the exercise
 
 ## Slide links
 
 - TBD
 - TBD
-- TBD
+- TBD -->
 
 <!-- - [Intro](https://docs.google.com/presentation/d/1LsfAkH8GfIhulEoy_yd-usWBfDHnZEyQdNvYeTmAg4A/)
 - [Wrap-up](https://docs.google.com/presentation/d/1cfyJ6SHddZNbM61oz67r870rLYVKY335zGclXN2uLMY/)
