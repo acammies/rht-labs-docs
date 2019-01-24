@@ -29,7 +29,7 @@ As a learner you will be able to
 ## Big Picture
 > From the previous exercise; we gated our pipeline. Now we will add a pipeline-as-code in the form of the Jenkinfile and re-use it on the Backend too.
 
-![big-picture](../images/big-picture/big-picture-3.jpg)
+![big-picture](../images/big-picture/big-picture-4.jpg)
 
 _____
 

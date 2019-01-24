@@ -47,7 +47,7 @@ As a learner you will be able to
 ## Big Picture
 > From the previous exercise; we introduced pipeline-as-code and new Jenkins Slave nodes. This exercise focuses on extending the pipeline with Non-functional testin and some automated security testing.
 
-![big-picture](../images/big-picture/big-picture-4.jpg)
+![big-picture](../images/big-picture/big-picture-5.jpg)
 
 _____
 

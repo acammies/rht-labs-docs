@@ -34,7 +34,6 @@ As a learner you will be able to
 > The Big Picture is our emerging architecture; starting with an empty cluster we populate it with projects and some ci/cd tooling.
 
 ![big-picture](../images/big-picture/big-picture-1.jpg)
-
 _____
 
 <!-- ## 10,000 Ft View

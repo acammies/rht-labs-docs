@@ -34,7 +34,7 @@ As a learner you will be able to
 ## Big Picture
 > From the previous exercise; we introduced non-functional testing to our pipeline. This exercise focuses on radiation of useful information such as build stats and times from our pipeline. 
 
-![big-picture](../images/big-picture/big-picture-5.jpg)
+![big-picture](../images/big-picture/big-picture-6.jpg)
 
 _____
 
