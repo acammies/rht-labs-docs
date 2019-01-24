@@ -34,7 +34,6 @@ As a learner you will be able to
 > The Big Picture is our emerging architecture; starting with an empty cluster we populate it with projects and some ci/cd tooling.
 
 ![big-picture](../images/big-picture/big-picture-1.jpg)
-
 _____
 
 <!-- ## 10,000 Ft View
@@ -436,13 +435,13 @@ The structure of the Jenkins s2i config is
 jenkins-s2i
 ├── README.md
 ├── configuration
-│   ├── build-failure-analyzer.xml
-│   ├── init.groovy
-│   ├── jenkins.plugins.slack.SlackNotifier.xml
-│   ├── scriptApproval.xml
-│   └── jobs
-│       └── seed-multibranch-job
-│           └── config.xml
+│   ├── build-failure-analyzer.xml
+│   ├── init.groovy
+│   ├── jenkins.plugins.slack.SlackNotifier.xml
+│   ├── scriptApproval.xml
+│   └── jobs
+│       └── seed-multibranch-job
+│           └── config.xml
 └── plugins.txt
 ```
  * `plugins.txt` is a list of `pluginId:version` for Jenkins to pre-install when starting
