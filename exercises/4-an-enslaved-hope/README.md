@@ -2,11 +2,14 @@
 
 > In this exercise we'll break free from the chains of point'n'click Jenkins by introducing pipeline as code in the form of `Jenkinsfile`. Following this we will introduce some new Jenkins slaves that will be used in later exercises.
 
-![jenkins-fail-meme](../images/exercise4/jenkins-fail-meme.jpeg)
+<!-- ![jenkins-fail-meme](../images/exercise4/jenkins-fail-meme.jpeg) -->
 
 There are a number of ways pipeline as code can be achieved in Jenkins.
+
  * The Job DSL Plugin - this is a slightly older but very functional DSL mechanism to create reusable pipelines. Create a `groovy` file to run Jenkins Domain Specific Language to create jobs, functions and other items. In Jenkins; you then can execute this file which will build all of the config.xml files needed for each Job.
+
  * The Scripted Pipeline - The scripted pipeline introduced the Jenkinsfile and the ability for developers to write their Jenkins setup as groovy code. A repo with a Jenkinsfile in its root can be pointed to by Jenkins and it will automatically build out each of the stages described within. The scripted pipeline is ultimately Groovy at its core.
+
  * The Declarative Pipeline - This approach looks to simplify and opinionate what you can do and when you can do it in a pipeline. It does this by giving you top level `block` which define sections, directives and steps. The declarative syntax is not run as groovy but you can execute groovy inside script blocks. The advantage of it over scripted is validation of the config and lighter approach with requirement to understand all of the `groovy` syntax
 
 _____
@@ -18,9 +21,9 @@ As a learner you will be able to
 - Create Jenkins slave nodes for use in builds in future exercises
 
 ## Tools and Frameworks
-> Name of tool - short description and link to docs or website
+<!-- > Name of tool - short description and link to docs or website -->
 
-1. [Pipeline](https://jenkins.io/doc/book/pipeline/) - Overview of the Jenkinsfile approach
+1. [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/) - Overview of the Jenkinsfile approach
 1. [Pipeline Syntax](https://jenkins.io/doc/book/pipeline/syntax/) - Documentation for the declarative pipeline
 1. [Groovy](http://groovy-lang.org/) - Groovy is a powerful, optionally typed and dynamic language, with static-typing and static compilation capabilities, for the Java platform aimed at improving developer productivity thanks to a concise, familiar and easy to learn syntax. It integrates smoothly with any Java program, and immediately delivers to your application powerful features, including scripting capabilities, Domain-Specific Language authoring, runtime and compile-time meta-programming and functional programming.
 1. [Zed Attack Proxy](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) - The OWASP Zed Attack Proxy (ZAP) is one of the world’s most popular free security tools and is actively maintained by hundreds of international volunteers*. It can help you automatically find security vulnerabilities in your web applications while you are developing and testing your applications. Its also a great tool for experienced pentesters to use for manual security testing.
@@ -33,18 +36,18 @@ As a learner you will be able to
 
 _____
 
-## 10,000 Ft View
+<!-- ## 10,000 Ft View
 > The goal of this exercise is to move to using the Jenkinsfile in the todolist-api and todolist-fe projects. Additionally we will create new slaves for use in the next exercise.
 
 2. On Jenkins; create a multibranch pipeline project to scan the GitLab endpoint for each app. Use the Jenkinsfile provided to run the stages. Replace `<YOUR_NAME>` with the appropriate variable.
 
-2. Create two new Jenkins slaves for the `OWASP ZAP` scanner and the `Arachni` WebCrawler
+2. Create two new Jenkins slaves for the `OWASP ZAP` scanner and the `Arachni` WebCrawler -->
 
 ## Step by Step Instructions
-> This is a fairly structured guide with references to exact filenames and sections of text to be added.
+<!-- > This is a fairly structured guide with references to exact filenames and sections of text to be added. -->
 
 ### Part 1 - The Jenkinsfile
-> _In this exercise we'll replace the Pipeline we created in Exercise 2 with a Jenkinsfile approach_
+> _In this exercise we'll replace the Pipeline we created in the previous with a Jenkinsfile approach_
 
 2. On your terminal navigate to your `todolist-api` project and checkout the pipeline feature branch that's been already created for you.
 ```bash
@@ -293,9 +296,9 @@ git push
 ```
 
 ### Part 3 - Security Scanning Slaves
-> _This exercise focuses on updating the `enablement-ci-cd` repo with some new jenkins-slave pods for use in future exercise_
+> _This part of the exercise focuses on updating the `enablement-ci-cd` repo with some new jenkins-slave pods for use in future exercise_
 
-#### 3a - OWASP ZAP
+<!-- #### 3a - OWASP ZAP
 > _OWASP ZAP (Zed Attack Proxy) is a free open source security tool used for finding security vulnerabilities in web applications._
 
 3. On your  terminal; move to the `enablement-ci-cd` repo.  We need to checkout a template for OpenShift to build our Jenkins Slave images and some parameters for the `zap` slave.
@@ -325,7 +328,7 @@ ansible-playbook apply.yml -e target=tools \
 ```
 
 3. Head to <CLUSTER_URL> on OpenShift and move to your ci-cd project > builds. You should see `jenkins-slave-zap` has been built.
-![zap-build](../images/exercise4/zap-build.png)
+![zap-build](../images/exercise4/zap-build.png) -->
 
 #### 3b - Arachni Scan
 > _Arachni is a feature-full, modular, high-performance Ruby framework aimed towards helping penetration testers and administrators evaluate the security of web applications._
@@ -377,7 +380,7 @@ ansible-playbook apply.yml -e target=tools \
 
 _____
 
-## Extension Tasks
+<!-- ## Extension Tasks
 > _Ideas for go-getters. Advanced topic for doers to get on with if they finish early. These will usually not have a solution and are provided for additional scope._
 
 Jenkins S2I
@@ -397,4 +400,4 @@ Jenkins e2e extension (blue/green)
 
 - [Intro](https://docs.google.com/presentation/d/1B3Fv4g66zZ8ZkqBq9TYmImJhUDvMecXCt4q3DXGWhjc/)
 - [Wrap-up](https://docs.google.com/presentation/d/1EOk6y798Xh1hsaQlxRuqyr23FIIf7sNY4any_yXIL7A/)
-- [All Material](https://drive.google.com/drive/folders/1oCjpl33Db7aPocmpu3NNF0B9czRvFq3m)
+- [All Material](https://drive.google.com/drive/folders/1oCjpl33Db7aPocmpu3NNF0B9czRvFq3m) -->
