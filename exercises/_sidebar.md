@@ -6,6 +6,6 @@
 * [4. An Enslaved Hope](4-an-enslaved-hope/README.md)
 * [5. The Non-Functionals Strike Back](5-non-functionals-strike-back/README.md)
 * [6. Return of the Monitoring](6-return-of-the-app-monitoring/README.md)
-<!-- * [7. The Cluster Awakens](7-the-cluster-awakens/README.md)
-* [8. The Last Unicorn Dev](8-the-last-unicorn-dev/README.md)
-* [Rogue Cluster: A Setup Guide](0-rogue-cluster/README.md) -->
+<!-- * [7. The Cluster Awakens](7-the-cluster-awakens/README.md) -->
+<!-- * [8. The Last Unicorn Dev](8-the-last-unicorn-dev/README.md) -->
+<!-- * [Rogue Cluster: A Setup Guide](0-rogue-cluster/README.md) -->
