@@ -412,6 +412,19 @@ git push -u origin feature/important-flag
 npm run test -- --watch
 ```
 
+> NOTE: You may see an `ENOSPC` error on Linux systems like the following:
+```bash
+ERROR jest exited with code 1.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! todolist-fe@1.0.0 test: `vue-cli-service test "--watch"`
+npm ERR! Exit status 1
+```
+To fix this error, run the following command:
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
 3. All the tests should be passing when we begin. If `No tests found related to files changed since last commit` is on show; hit `a` on the terminal to re-run `all` tests.
 
 ![rerun-all](../images/exercise3/rerun-all.png)
