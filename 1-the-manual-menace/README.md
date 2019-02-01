@@ -81,7 +81,10 @@ cd C:\do500-workspace
 2. Clone the scaffold project to your local machine's `do500-workspace` folder and pull all remote branches for use in later exercises. You may see an error saying `fatal: A branch named 'develop' already exists.` This error can be safely ignored.
 
 ```bash
-git clone https://github.com/rht-labs/enablement-ci-cd && cd enablement-ci-cd
+git clone https://github.com/RedHatTraining/rht-labs-ci-cd enablement-ci-cd
+```
+```bash
+cd enablement-ci-cd
 ```
 ```bash
 ./git-pull-all.sh

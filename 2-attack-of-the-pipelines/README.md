@@ -93,7 +93,7 @@ NOTE: Microsoft Windows users, run the following commands in a `Git Bash` window
 cd ~/do500-workspace
 ```
 ```bash
-git clone https://github.com/rht-labs/todolist-fe.git
+git clone https://github.com/RedHatTraining/rht-labs-todolist-fe todolist-fe
 ```
 ```bash
 cd todolist-fe
@@ -230,7 +230,7 @@ NOTE: Microsoft Windows users, run the following commands in a `Git Bash` window
 cd ~/do500-workspace
 ```
 ```bash
-git clone https://github.com/rht-labs/todolist-api.git
+git clone https://github.com/RedHatTraining/rht-labs-todolist-api todolist-api
 ```
 ```bash
 cd todolist-api
