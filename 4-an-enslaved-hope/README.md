@@ -417,6 +417,23 @@ ansible-playbook apply.yml -e target=tools \
 2. Head to <CLUSTER_URL> on OpenShift and move to your ci-cd project `Builds > Images`. You should see the `jenkins-slave-arachni` image.
 ![builds-zap-arachni](../images/exercise4/builds-zap-arachni.png)
 
+3. Just like you did with the `jenkins-slave-npm`, configure the `jenkins-slave-arachni` pod template to bypass SSL certificate checks in the Jenkins global configuration settings. Log in to Jenkins and navigate to `Manage Jenkins` > `Configure System` page.
+
+4. Locate the `Kubernetes Pod Template` section by scrolling to the bottom of the page and click on `Add Pod Template` to add a new pod template for the Arachni scanner slave.
+![add-kube-pod-template](../images/exercise4/add-kube-pod-template.png)
+
+5. For the new pod template, enter `jenkins-slave-arachni` in the `Name` and `Labels` fields. 
+
+6. In the `Containers` section for the pod template, add a new container template with the following details:
+    * Enter `jnlp` in the `Name` field
+    * Enter `docker-registry.default.svc:5000/rsriniva-ci-cd/jenkins-slave-arachni` in the `Docker image` field
+    * Enter `/tmp` in the `Working directory` field
+    * Enter `${computer.jnlpmac} ${computer.name}` in the `Arguments to pass to the command` field
+
+7. Add a new environment variable called `GIT_SSL_NO_VERIFY` and set its value to `true`. Your final `jenkins-slave-arachni` kubernetes pod template should look like the following:
+![add-kube-pod-template](../images/exercise4/new-arachni-container-template.png)
+
+8. Click `Save` at the bottom of the page to save your global Jenkins settings.
 _____
 
 <!-- ## Extension Tasks
