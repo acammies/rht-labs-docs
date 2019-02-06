@@ -157,7 +157,7 @@ Execute the following commands in the ***Windows Command Prompt*** to run Ansibl
 
 * Pull the container image containing the tools and utilities that are required for running Ansible playbooks:
 ```bash
-docker pull quay.io/jrigsbee/do500-toolbox
+docker pull quay.io/redhat/do500-toolbox
 ```
 * Create a working directory under your ***C:\*** drive to store the lab exercise files and Ansible playbooks
 ```bash
@@ -166,7 +166,7 @@ mkdir C:\do500-workspace
 
 * Launch the container and run a quick test:
 ```bash
-docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z quay.io/jrigsbee/do500-toolbox /bin/bash
+docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z quay.io/redhat/do500-toolbox /bin/bash
 ```
 
 <b><span style="color:red">NOTE</span></b>

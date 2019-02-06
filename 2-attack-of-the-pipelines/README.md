@@ -199,7 +199,7 @@ NOTE: Microsoft Windows users, run the following commands in the *do500-toolbox*
 </p>
 
 ```bash
-docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z quay.io/jrigsbee/do500-toolbox /bin/bash
+docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z quay.io/redhat/do500-toolbox /bin/bash
 ```
 
 ```bash

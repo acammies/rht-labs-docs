@@ -186,7 +186,7 @@ NOTE - On Microsoft Windows systems, we recommend you keep the container running
 
 9. Launch the toolbox container using the Windows command line terminal, and navigate to the `enablement-ci-cd` directory inside the container
 ```bash
-docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z quay.io/jrigsbee/do500-toolbox /bin/bash
+docker run -it -v C:/do500-workspace:/home/tool-box/workarea:Z quay.io/redhat/do500-toolbox /bin/bash
 bash-4.4$ cd workarea/enablement-ci-cd
 ```
 
