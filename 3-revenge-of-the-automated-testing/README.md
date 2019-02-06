@@ -14,7 +14,7 @@
 
 The TDD cycle can be illustrated with the following diagram:
 
-![TDD-diagram](../images/exercise3/TDD-lifecycle.jpg)
+![TDD-diagram](../images/exercise3/TDD_Lifecycle.png)
 
 ### The TDD Cycle
 
