@@ -165,20 +165,20 @@ NAMESPACE_DISPLAY_NAME=<YOUR-NAME> Test
 ```yaml
     - name: "{{ dev_namespace }}"
       template: "{{ playbook_dir }}/templates/project-requests.yml"
-      template_action: create
+      action: create
       params: "{{ playbook_dir }}/params/project-requests-dev"
       tags:
       - projects
     - name: "{{ test_namespace }}"
       template: "{{ playbook_dir }}/templates/project-requests.yml"
-      template_action: create
+      action: create
       params: "{{ playbook_dir }}/params/project-requests-test"
       tags:
       - projects
 ```
 ![project-request-yaml](../images/exercise1/project-request-yml.png)
 
-For Microsoft Windows systems, you need to run Ansible and OpenShift client commands from inside the `do500-toolbox` container.
+For Microsoft Windows systems, you need to run Ansible and OpenShift client commands from inside the `do500-toolbox` container. Linux and MacOS users should skip this step and jump directly to Step 10.
 
 <p class="tip">
 NOTE - On Microsoft Windows systems, we recommend you keep the container running for the duration of the lab. Run all Ansible and OpenShift client ("oc") CLI commands from inside the container. Do NOT launch the container on Linux and MacOS systems, since you should already have Ansible and the OpenShift client natively installed on your system by following the pre-requisites setup guide.
