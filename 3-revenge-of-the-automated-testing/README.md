@@ -119,10 +119,10 @@ npm run test
 
 4. Repeat the same process for `todolist-api` and verify that all the tests run. If you have an ExpressJS server already running from previous exercise; you should kill it before running the tests. The `mocha` test suite will launch a dev server for running the tests. There are 2 API test files: `todolist-api/server/api/todo/todo.spec.js` & `todolist-api/server/mocks/mock-routes.spec.js` for our API and the Mocks server. Remember to start the `mongo` container before running the tests
 ```bash
-npm run mongo:start
+cd todolist-api
 ```
 ```bash
-cd todolist-api
+npm run mongo:start
 ```
 ```bash
 npm run test
@@ -677,11 +677,33 @@ touch tests/e2e/specs/importantFlag.js
     ![if-e2e-step3a](../images/exercise3/if-e2e-step3a.png)
 
 6.  Write the following test code. The pauses allow for the body of the page to render the todo list before exercising the test code:
-
+```javascript
+module.exports = {
+    "Testing important flag setting": browser => {
+      browser
+        .url(process.env.VUE_DEV_SERVER_URL + '/#/todo')
+        .waitForElementVisible("body", 5000)
+        .pause(5000)
+        .click('#clear-all')
+        .pause(2000)
+        .setValue('input',['set a todo',browser.Keys.ENTER])
+        .pause(2000)
+        .assert.elementPresent(".important-flag")
+        .assert.elementNotPresent(".red-flag")
+        .click('.important-flag')
+        .end();
+    }
+  };
+```
     <!-- ![if-e2e-step4](../images/exercise3/if-e2e-step4.png) -->
+    
+    <!-- ![if-e2e-step4](../images/exercise3/e2e-code-listing-full.jpg) -->
+
+7. Your final E2E test should look like the following:
+
     ![if-e2e-step4](../images/exercise3/e2e-code-listing-full.jpg)
 
-7.  At this point we should have a working e2e test. We can run this by using `npm run e2e`. When all tests pass, we can push up these changes.
+8.  At this point we should have a working e2e test. We can run this by using `npm run e2e`. When all tests pass, we can push up these changes.
 
 ```bash
 git add .
