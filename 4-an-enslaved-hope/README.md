@@ -219,6 +219,7 @@ git push -u origin --all
 
 1. For the rest of the lab, ensure that you are working from the `master` branch
 ```bash
+cd todolist-fe
 git checkout master
 ```
 
@@ -233,7 +234,7 @@ NAME=todolist-fe
 
 4. Create a new object in `inventory/group_vars/all.yml` to drive the `ocp-pipeline` template with the parameters file you've just created. It can be put under the existing `todolist-fe-build` object.
 ```yaml
-  - name: todolist-ocp-pipeline
+  - name: todolist-fe-pipeline
     template: "{{ playbook_dir }}/templates/ocp-pipeline.yml"
     params: "{{ playbook_dir }}/params/ocp-pipeline"
     namespace: "{{ ci_cd_namespace }}"
@@ -284,7 +285,7 @@ git checkout master
 
 10. Update the `todolist-api/.openshift-applier/inventory/group_vars/all.yml` with a new object to drive the params and template
 ```yaml
-  - name: todolist-ocp-pipeline
+  - name: todolist-api-pipeline
     template: "{{ playbook_dir }}/templates/ocp-pipeline.yml"
     params: "{{ playbook_dir }}/params/ocp-pipeline"
     namespace: "{{ ci_cd_namespace }}"
@@ -430,7 +431,7 @@ ansible-playbook apply.yml -e target=tools \
     * Enter `/tmp` in the `Working directory` field
     * Enter `${computer.jnlpmac} ${computer.name}` in the `Arguments to pass to the command` field
 
-7. Add a new environment variable called `GIT_SSL_NO_VERIFY` and set its value to `true`. Your final `jenkins-slave-arachni` kubernetes pod template should look like the following:
+7. Add a new environment variable for the container template called `GIT_SSL_NO_VERIFY` and set its value to `true`. Your final `jenkins-slave-arachni` kubernetes pod template should look like the following:
 ![add-kube-pod-template](../images/exercise4/new-arachni-container-template.png)
 
 8. Click `Save` at the bottom of the page to save your global Jenkins settings.
