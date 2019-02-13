@@ -696,9 +696,14 @@ module.exports = {
   };
 ```
     <!-- ![if-e2e-step4](../images/exercise3/if-e2e-step4.png) -->
+    
+    <!-- ![if-e2e-step4](../images/exercise3/e2e-code-listing-full.jpg) -->
+
+7. Your final E2E test should look like the following:
+
     ![if-e2e-step4](../images/exercise3/e2e-code-listing-full.jpg)
 
-7.  At this point we should have a working e2e test. We can run this by using `npm run e2e`. When all tests pass, we can push up these changes.
+8.  At this point we should have a working e2e test. We can run this by using `npm run e2e`. When all tests pass, we can push up these changes.
 
 ```bash
 git add .
