@@ -31,7 +31,7 @@ As a learner you will be able to
 * [OpenShift Applier](https://github.com/redhat-cop/openshift-applier) - used to apply OpenShift objects to an OpenShift Cluster.
 
 ## Big Picture
-> The Big Picture is our emerging architecture; starting with an empty cluster we populate it with projects and some ci/cd tooling.
+> The Big Picture is our emerging architecture; starting with an empty cluster we populate it with projects and some CI/CD tooling.
 
 ![big-picture](../images/big-picture/big-picture-1.jpg)
 _____
