@@ -113,7 +113,7 @@ brew install ansible
 ```bash
 curl -L -O https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-mac.zip
 unzip openshift-origin-client-tools-v3.11.0-0cbc58b-mac.zip
-cp openshift-origin-client-tools-v3.11.0-0cbc58b-mac/oc /usr/local/bin/
+cp oc /usr/local/bin/
 chmod +x /usr/local/bin/oc
 ```
 
