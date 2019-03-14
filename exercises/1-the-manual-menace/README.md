@@ -195,7 +195,7 @@ bash-4.4$ cd workarea/enablement-ci-cd
 ansible-galaxy install -r requirements.yml --roles-path=roles
 ```
 
-11. Apply the inventory by logging into OpenShift on the terminal and running the playbook as follows (<CLUSTER_URL> should be replaced with the one you've been provided by the instructor). Accept any insecure connection warning 👍:
+11. Apply the inventory by logging into OpenShift on the terminal and running the playbook as follows (< CLUSTER_URL > should be replaced with the one you've been provided by the instructor). Accept any insecure connection warning 👍:
 ```bash
 oc login <CLUSTER_URL>
 ```
